@@ -1,17 +1,32 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
-import { container,heading,navLinks,navLinkItem,navLinkText } from './layout.module.css'
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { container,siteTitle,heading,navLinks,navLinkItem,navLinkText } from './layout.module.css'
 
-let linkUrlArray = [];
-for (let i = 1; i < 65; i++) {
-  linkUrlArray.push("chapters/chapter-"+i);
-} 
+
 // console.log(linkUrlArray);
 
 
 const Layout = ({ pageTitle, children }) => {
+  const linkUrlArray = [];
+  for (let i = 1; i < 65; i++) {
+    linkUrlArray.push("chapters/chapter-"+i);
+  } 
+
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+  
+  console.log(data);
+
   return (
     <div className={container}>
+      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
       <nav>
         <ul className={navLinks}>
           <li className={navLinkItem}>
@@ -21,10 +36,10 @@ const Layout = ({ pageTitle, children }) => {
             <Link to="/about" className={navLinkText}>About</Link>
           </li>
           <li className={navLinkItem}>
-            <Link to="/page-3" className={navLinkText}>Page 3</Link>
+            <Link to="/blog" className={navLinkText}>Blog</Link>
           </li>
           <li className={navLinkItem}>
-            <Link to="/page-4" className={navLinkText}>Page 4</Link>
+            <Link to="/iching" className={navLinkText}>I-Ching</Link>
           </li>
         </ul>
       </nav>
