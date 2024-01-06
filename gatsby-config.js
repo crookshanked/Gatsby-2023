@@ -10,19 +10,19 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-mdx",
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: `iching`,
+    //     path: `${__dirname}/iching`,
+    //   }
+    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: `iching`,
-        path: `${__dirname}/iching`,
+        name: `blog`,
+        path: `${__dirname}/blog`,
       }
     },
-    // {
-      // resolve: "gatsby-source-filesystem",
-      // options: {
-      //   name: `blog`,
-      //   path: `${__dirname}/blog`,
-      // }
-    // },
   ],
 }
