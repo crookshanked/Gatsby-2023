@@ -32,7 +32,6 @@ query {
         slug
       }
       id
-      excerpt
     }
   }
 }
