@@ -14,13 +14,19 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@mdx-js/react": "^3.0.0",
+    "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.13.0",
     "gatsby-plugin-image": "^3.13.0",
     "gatsby-plugin-mdx": "^5.13.0",
     "gatsby-plugin-sharp": "^5.13.0",
     "gatsby-source-filesystem": "^5.13.0",
+    "gatsby-transformer-sharp": "^5.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "overrides": {
+    "react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825": {
+      "react": "^18.2.0"
+    }
   }
 }
